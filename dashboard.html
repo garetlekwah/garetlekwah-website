@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LekwahGreat | Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7fb;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      color: #00ffcc;
+    }
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    @media (max-width:768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+      }
+      .nav-links.show { display: flex; }
+      .hamburger { display: block; }
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 2rem 0;
+    }
+    .tabs button {
+      padding: 10px 20px;
+      border: none;
+      background: #98c379;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .tabs button:hover {
+      background: #6aa74b;
+    }
+    .tab-content {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: none;
+    }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">LekwaGreat Dashboard</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">Messages</a></li>
+    <li><a href="#">Settings</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<div class="tabs">
+  <button onclick="showTab('profile')">Profile</button>
+  <button onclick="showTab('projects')">Projects</button>
+  <button onclick="showTab('messages')">Messages</button>
+</div>
+
+<div id="profile" class="tab-content active">
+  <h2>User Profile</h2>
+  <p>Name: LekwahGreat</p>
+  <p>Email: example@example.com</p>
+  <p>Role: Web Developer</p>
+</div>
+
+<div id="projects" class="tab-content">
+  <h2>Projects</h2>
+  <ul>
+    <li>Portfolio Website</li>
+    <li>Mini JS Project</li>
+    <li>Other Upcoming Projects</li>
+  </ul>
+</div>
+
+<div id="messages" class="tab-content">
+  <h2>Messages</h2>
+  <p>No new messages</p>
+</div>
+
+<script>
+  // Hamburger toggle
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+
+  // Tabs
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
