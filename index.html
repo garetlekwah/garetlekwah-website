@@ -90,14 +90,80 @@
       .projects { grid-template-columns: 1fr; }
       nav a { display:block; margin:0.5rem 0; }
     }
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #222;
+  color: white;
+    }
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.nav-links li {
+  margin: 0 15px;
+}
+    .nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+    }
+.nav-links a:hover {
+  color: #00ffcc;
+}
+    .hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+    }
+    @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+      .nav-links.show {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+    
+    
   </style>
 </head>
 <body>
 
 <button id="dark-mode-toggle">🌙 Dark Mode</button>
 
+
+  
 <header>
   <img src="logo.png" alt="LekwaGreat Logo" class="logo">
+</header>
+<header>
+  <nav class="navbar">
+    <div class="logo">LekwaGreat</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+</header>
+
+  
   <h1>Hi, I'm LekwahGreat 👋</h1>
   <p>Aspiring Web Developer | Always Learning</p>
   <nav>
@@ -126,7 +192,12 @@
     </div>
   </div>
 </section>
-
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+  
 <section id="contact">
   <h2>Contact Me</h2>
   <form id="contact-form">
@@ -137,7 +208,7 @@
   </form>
   <p id="form-status"></p>
 </section>
-
+<a href="dashboard.html">Go to Dashboard</a>
 <footer>
   <p>© 2025 LekwahGreat | Built with ❤️ and code</p>
 </footer>
@@ -191,3 +262,4 @@
 
 </body>
 </html>
+
