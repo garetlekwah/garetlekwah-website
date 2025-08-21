@@ -195,6 +195,36 @@ function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("show");
 }
 </script>
+
+<div class="tabs">
+  <button onclick="showTab('profile')">Profile</button>
+  <button onclick="showTab('projects')">Projects</button>
+  <button onclick="showTab('messages')">Messages</button>
+</div>
+
+<div id="profile" class="tab">
+  <h2>Profile</h2>
+  <p>Name: LekwaGreat</p>
+</div>
+
+<div id="projects" class="tab" style="display:none">
+  <h2>Projects</h2>
+  <ul><li>Portfolio Website</li></ul>
+</div>
+
+<div id="messages" class="tab" style="display:none">
+  <h2>Messages</h2>
+  <p>No new messages</p>
+</div>
+
+<script>
+function showTab(tabId) {
+  document.querySelectorAll('.tab').forEach(tab => tab.style.display = 'none');
+  document.getElementById(tabId).style.display = 'block';
+}
+</script>
+
+
   
 <section id="contact">
   <h2>Contact Me</h2>
@@ -260,6 +290,7 @@ function toggleMenu() {
 
 </body>
 </html>
+
 
 
 
