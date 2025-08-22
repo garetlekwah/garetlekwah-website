@@ -64,21 +64,66 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
+  
+
 
   <section class="hero">
     <h2>Welcome to My Website</h2>
     <p>Simple, elegant, and built to grow with every project.</p>
   </section>
 
-<section>
+  <!-- ABOUT SECTION -->
+  <section id="about" style="padding:60px 20px; text-align:center; background:#f5f6fa;">
+    <h2>About Me</h2>
+    <p style="max-width:600px; margin:auto; font-size:1.1rem;">
+      I’m Garet Lekwah, passionate about building digital solutions that are simple, elegant, and powerful.  
+      This website is a space to showcase projects and connect with people.
+    </p>
+  </section>
 
+  <!-- CONTACT SECTION -->
+  <section id="contact" style="padding:60px 20px; background:#dcdde1; text-align:center;">
+    <h2>Contact Me</h2>
+    <p>Have a question or an idea? Send me a message below:</p>
 
+    <form id="contact-form" style="max-width:500px; margin:auto; text-align:left;">
+      <label for="name">Name</label><br>
+      <input type="text" id="name" name="name" required style="width:100%; padding:8px; margin:5px 0 15px;"><br>
 
+      <label for="email">Email</label><br>
+      <input type="email" id="email" name="email" required style="width:100%; padding:8px; margin:5px 0 15px;"><br>
 
+      <label for="message">Message</label><br>
+      <textarea id="message" name="message" required rows="4" style="width:100%; padding:8px; margin:5px 0 15px;"></textarea><br>
 
+      <button type="submit" style="padding:10px 20px; background:#273c75; color:white; border:none; cursor:pointer;">Send</button>
+    </form>
 
-  
-</section>
+    <p id="form-status" style="margin-top:15px; font-weight:bold;"></p>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("wUyrTx0kMvfdK-B-h"); // <-- YOUR Public Key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.send("service_5wq5uwc", "template_jrovvhw", {
+      from_name: document.getElementById("name").value,
+      from_email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    })
+    .then(function(response) {
+      document.getElementById("form-status").innerText = "✅ Message sent successfully!";
+    }, function(error) {
+      document.getElementById("form-status").innerText = "❌ Failed to send. Please try again.";
+    });
+  });
+</script>
+
 
 
 
@@ -89,5 +134,6 @@
   </footer>
 </body>
 </html>
+
 
 
