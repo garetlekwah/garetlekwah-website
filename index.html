@@ -160,6 +160,18 @@ footer .social-icons a {
   font-size: 1.2rem;
 }
 
+    .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 </script>
   </style>
 </head>
@@ -348,6 +360,37 @@ footer .social-icons a {
 </script>
 
 
+  <section id="about" class="animate-on-scroll">
+  <h2>About Me</h2>
+  <p>I love coding and learning every day.</p>
+</section>
+
+<section id="projects" class="animate-on-scroll">
+  <h2>Projects</h2>
+  <!-- project cards here -->
+</section>
+
+<section id="blog" class="animate-on-scroll">
+  <h2>Blog</h2>
+  <!-- blog posts here -->
+</section>
+
+  <script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target); // animate only once
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+
+
+
   <!-- Blog Section -->
 <section id="blog">
   <h2>Latest Blog Posts</h2>
@@ -373,7 +416,7 @@ footer .social-icons a {
       <p>Here’s what I’m planning to build and how I see the future shaping...</p>
       <a href="#">Read More</a>
     </article>
-    
+
   </div>
 </section>
 
@@ -403,6 +446,7 @@ footer .social-icons a {
 
 </body>
 </html>
+
 
 
 
