@@ -355,12 +355,66 @@ html { scroll-behavior: smooth; }
 ### Next Step (after you push these):
 
 **Step 2 — Hero/Heading Polish** (spacing, a short intro line, and cleaner call‑to‑action). Let me know once Step 1 is live and I’ll drop the exact markup/ CSS for the hero.
+/* ===== Navigation Bar ===== */
+
+    .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 13, 18, 0.9); /* semi-transparent */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--fg);
+}
+.logo span { color: var(--accent); }
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li { margin: 0; }
+.menu a {
+  display: block;
+  padding: 16px 12px;
+  font-weight: 600;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+.menu a:hover,
+.menu a:focus,
+.menu a.active {
+  color: var(--accent);
+}
 
 
 </script>
   </style>
 </head>
 <body>
+
+  
+<!-- ===== Navigation Bar ===== -->
+<header class="navbar">
+  <div class="container cluster">
+    <h2 class="logo">Lekwah<span>Great</span></h2>
+    <nav>
+      <ul class="menu cluster">
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  
   <header>
     <h1>LekwahGaret</h1>
     <nav>
@@ -590,6 +644,7 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(e
 
 </body>
 </html>
+
 
 
 
