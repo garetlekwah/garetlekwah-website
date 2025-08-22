@@ -65,6 +65,65 @@
       once: true   
     });
   });
+
+  /* Blog Section */
+#blog {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+#blog h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.blog-post {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 300px;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.blog-post img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.blog-post h3 {
+  margin: 15px 0 10px;
+  font-size: 1.2rem;
+}
+
+.blog-post p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.blog-post a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.blog-post a:hover {
+  text-decoration: underline;
+}
+
 </script>
   </style>
 </head>
@@ -201,6 +260,36 @@
   });
 </script>
 
+  <!-- Blog Section -->
+<section id="blog">
+  <h2>Latest Blog Posts</h2>
+  <div class="blog-container">
+    
+    <article class="blog-post">
+      <img src="https://via.placeholder.com/300x180" alt="Blog Post 1">
+      <h3>How I Started My Journey</h3>
+      <p>A short story about how I began my path into tech and design...</p>
+      <a href="#">Read More</a>
+    </article>
+    
+    <article class="blog-post">
+      <img src="https://via.placeholder.com/300x180" alt="Blog Post 2">
+      <h3>Tips for Growing Your Brand</h3>
+      <p>Some simple steps you can follow to make your brand stand out online...</p>
+      <a href="#">Read More</a>
+    </article>
+    
+    <article class="blog-post">
+      <img src="https://via.placeholder.com/300x180" alt="Blog Post 3">
+      <h3>Future Projects & Plans</h3>
+      <p>Here’s what I’m planning to build and how I see the future shaping...</p>
+      <a href="#">Read More</a>
+    </article>
+    
+  </div>
+</section>
+
+
 <!-- Projects Section -->
 <section id="projects" style="padding:60px 20px; text-align:center; background:#fff;">
   <h2 style="font-size:2rem; margin-bottom:40px; color:#333;">My Projects</h2>
@@ -254,6 +343,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
