@@ -13,8 +13,8 @@ body {
 
 /* HEADER */
 header {
-  background: white;
-  color: #333;
+  background: #1e90ff;   /* Blue background */
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,29 +23,32 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 header .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: white;
 }
 header .nav-links {
   display: flex;
   gap: 20px;
 }
 header .nav-links a {
-  color: #333;
+  color: white;  /* white text for links */
   text-decoration: none;
   font-weight: bold;
 }
 header .nav-links a:hover {
-  color: #1e90ff;
+  color: #ffdd57;  /* yellow hover effect */
 }
 .hamburger {
   display: none;
   cursor: pointer;
   font-size: 24px;
+  color: white;
 }
+
 
 /* HERO with background image */
 .hero {
