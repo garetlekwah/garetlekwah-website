@@ -1,494 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required basics -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Lekwah Great — Portfolio</title>
-<meta name="description" content="Portfolio of Lekwah Great (Frontend developer). Projects, skills, and contact information." />
-
-
-<!-- Favicon (place favicon.png at your site root) -->
-<link rel="icon" type="image/png" href="/favicon.png" />
-
-
-<!-- Web fonts: Inter for clean, modern typography -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-
-
-<!-- Open Graph / Social share -->
-<meta property="og:title" content="Lekwah Great — Portfolio" />
-<meta property="og:description" content="Frontend developer showcasing projects and contact info." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://garetlekwah.github.io/garetlekwah-website/" />
-<!-- Replace with a real image hosted in your repo, e.g. /assets/og-image.jpg -->
-<meta property="og:image" content="https://garetlekwah.github.io/garetlekwah-website/assets/og-image.jpg" />
-
-
-<!-- Twitter card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Lekwah Great — Portfolio" />
-<meta name="twitter:description" content="Frontend developer showcasing projects and contact info." />
-<meta name="twitter:image" content="https://garetlekwah.github.io/garetlekwah-website/assets/og-image.jpg" />
-
-
-<!-- Base styles (optional if you already have a CSS file; see Section 2) -->
-<link rel="stylesheet" href="/styles.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f6fa;
-      color: #2f3640;
-    }
-    header {
-      background: #273c75;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-      font-weight: bold;
-    }
-    html {
-  scroll-behavior: smooth;
-}
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #40739e, #273c75);
-      color: white;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 1.1rem;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #273c75;
-      color: white;
-      margin-top: 40px;
-    }
-   
-  document.addEventListener("DOMContentLoaded", function() {
-    AOS.init({
-      duration: 1000,
-      once: true   
-    });
-  });
-
-  /* Blog Section */
-#blog {
-  padding: 60px 20px;
-  background: #f9f9f9;
-  text-align: center;
-}
-
-#blog h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.blog-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.blog-post {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 300px;
-  padding: 15px;
-  transition: transform 0.3s;
-}
-
-    .blog-posts {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.blog-post:hover {
-  transform: translateY(-5px);
-}
-
-.blog-post img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.blog-post h3 {
-  margin: 15px 0 10px;
-  font-size: 1.2rem;
-}
-
-.blog-post p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.blog-post a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-.blog-post a:hover {
-  text-decoration: underline;
-}
-
-    footer {
-  background: #111;
-  color: #aaa;
-  text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: #98c379;
-  margin: 0 0.5rem;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: #fff;
-}
-
-footer .social-icons {
-  margin-top: 1rem;
-}
-
-footer .social-icons a {
-  display: inline-block;
-  margin: 0 0.5rem;
-  font-size: 1.2rem;
-}
-
-    .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-on-scroll.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-    # Step 1: Head, Fonts, and Base Styles
-
-This first step makes your site look immediately more professional by polishing the **`<head>` (SEO + social)** and **typography + spacing**. Copy–paste the snippets below into your existing files.
-
----
-
-## 1) Replace your `<head>` with this
-
-> Put this inside your HTML file, replacing everything between `<head>...</head>`.
-
-```html
-<head>
-  <!-- Required basics -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lekwah Great — Portfolio</title>
-  <meta name="description" content="Portfolio of Lekwah Great (Frontend developer). Projects, skills, and contact information." />
-
-  <!-- Favicon (place favicon.png at your site root) -->
   <link rel="icon" type="image/png" href="/favicon.png" />
-
-  <!-- Web fonts: Inter for clean, modern typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-
-  <!-- Open Graph / Social share -->
-  <meta property="og:title" content="Lekwah Great — Portfolio" />
-  <meta property="og:description" content="Frontend developer showcasing projects and contact info." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://garetlekwah.github.io/garetlekwah-website/" />
-  <!-- Replace with a real image hosted in your repo, e.g. /assets/og-image.jpg -->
-  <meta property="og:image" content="https://garetlekwah.github.io/garetlekwah-website/assets/og-image.jpg" />
-
-  <!-- Twitter card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Lekwah Great — Portfolio" />
-  <meta name="twitter:description" content="Frontend developer showcasing projects and contact info." />
-  <meta name="twitter:image" content="https://garetlekwah.github.io/garetlekwah-website/assets/og-image.jpg" />
-
-  <!-- Base styles (optional if you already have a CSS file; see Section 2) -->
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-```
-
-**Notes:**
-
-* Add a `favicon.png` at the root of your repo (or update the path).
-* Add an image file at `assets/og-image.jpg` to control how your link looks when shared.
-* Update the description later if you want to highlight specific skills.
-
----
-
-## 2) Add/Update your base CSS
-
-> Create a `styles.css` file at the site root (or merge these into your current CSS). These rules tighten typography, spacing, and color.
-
-```css
-/* ===== Base Theme ===== */
-:root {
-  --bg: #0b0d12;        /* deep slate background */
-  --card: #111827;      /* card/section background */
-  --fg: #e5e7eb;        /* main text */
-  --muted: #9ca3af;     /* secondary text */
-  --accent: #4f46e5;    /* indigo accent */
-  --border: rgba(255, 255, 255, 0.08);
-}
-
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.65;
-  letter-spacing: 0.2px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Headings with tighter rhythm */
-h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5rem; }
-h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; }
-h2 { font-size: clamp(1.4rem, 2.4vw, 2rem); font-weight: 700; }
-h3 { font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 600; }
-
-p { margin: 0.75rem 0; color: var(--fg); }
-.small { color: var(--muted); font-size: 0.95rem; }
-
-/* Sections aligned and centered for readability */
-section { max-width: 1000px; margin: 0 auto; padding: 72px 20px; }
-.hero { padding-top: 96px; padding-bottom: 48px; }
-
-/* Links and buttons */
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-  box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 10px 20px rgba(0,0,0,.25);
-  text-decoration: none;
-}
-.btn:hover { transform: translateY(-1px); }
-
-/* Utility components */
-.pill {
-  display: inline-block; padding: 6px 12px; border-radius: 9999px;
-  background: rgba(79, 70, 229, 0.12); color: var(--accent); font-weight: 600; font-size: 0.9rem;
-}
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 20px;
-}
-
-/* Layout helpers */
-.container { max-width: 1000px; padding: 0 20px; margin: 0 auto; }
-.stack > * + * { margin-top: 16px; }            /* vertical spacing */
-.cluster { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
-.grid { display: grid; gap: 16px; }
-
-/* Make anchor jumps feel smooth (for later steps) */
-html { scroll-behavior: smooth; }
-```
-
----
-
-## 3) Where these changes help
-
-* **Immediate visual lift** from the Inter font and consistent spacing.
-* **Professional link previews** (Open Graph/Twitter) when you share your site.
-* **Brand presence** from the favicon in the browser tab.
-
----
-
-## 4) Quick checklist
-
-* [ ] Commit `favicon.png` at the project root.
-* [ ] Commit `assets/og-image.jpg` (1200×630 recommended).
-* [ ] Replace `<head>` with the snippet above.
-* [ ] Add `styles.css` (or merge the CSS into your existing stylesheet).
-* [ ] Push to GitHub Pages and refresh.
-
----
-
-### Next Step (after you push these):
-
-**Step 2 — Hero/Heading Polish** (spacing, a short intro line, and cleaner call‑to‑action). Let me know once Step 1 is live and I’ll drop the exact markup/ CSS for the hero.
-
-/* ===== Navbar Base ===== */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(17, 24, 39, 0.85); /* glassy dark */
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  height: 64px;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--fg);
-}
-.logo span {
-  color: var(--accent);
-}
-
-/* ===== Menu Links ===== */
-.nav-menu {
-  display: flex;
-  gap: 24px;
-}
-.nav-menu a {
-  font-weight: 600;
-  color: var(--fg);
-  padding: 8px 0;
-  position: relative;
-  transition: color 0.2s ease;
-}
-.nav-menu a:hover {
-  color: var(--accent);
-}
-.nav-menu a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.3s ease;
-}
-.nav-menu a:hover::after {
-  width: 100%;
-}
-
-/* ===== Hamburger Button ===== */
-.hamburger {
-  display: none; /* hidden on desktop */
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 200;
-}
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: var(--fg);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* ===== Mobile Styles ===== */
-@media (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    top: 64px;
-    right: -100%; /* hidden off-screen */
-    width: 220px;
-    height: 100vh;
-    background: var(--card);
-    border-left: 1px solid var(--border);
-    padding: 40px 20px;
-    flex-direction: column;
-    gap: 20px;
-    transition: right 0.3s ease;
-  }
-
-  .nav-menu.active {
-    right: 0;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-}
-
-
-
-
-</script>
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  
-<!-- ===== Navigation Bar ===== -->
-
-
-  <header class="navbar">
+<header class="navbar">
   <div class="nav-container">
     <h1 class="logo">Lekwah<span>Garet</span></h1>
 
-    <!-- Hamburger Button -->
     <button class="hamburger" id="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- Navigation Links -->
     <nav class="nav-menu" id="nav-menu">
       <a href="index.html">Home</a>
       <a href="dashboard.html">Dashboard</a>
@@ -500,264 +30,111 @@ html { scroll-behavior: smooth; }
   </div>
 </header>
 
-  
-
-
-  <section id="hero" style="height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:#1e272e; color:white; padding:20px;">
-  <h1 style="font-size:3rem; margin-bottom:10px;">Hi, I'm Lekwah Great</h1>
-  <p style="font-size:1.2rem; max-width:600px;">
-    I build modern, interactive, and user-friendly websites to bring your ideas to life.
-  </p>
-  <a href="#contact" style="margin-top:20px; padding:12px 25px; background:#ff4757; color:white; border-radius:8px; text-decoration:none; font-size:1rem; transition:0.3s;">
-    Get in Touch
-  </a>
+<section id="hero" class="hero-section">
+  <h1>Hi, I'm Lekwah Great</h1>
+  <p>I build modern, interactive, and user-friendly websites to bring your ideas to life.</p>
+  <a href="#contact" class="btn-primary">Get in Touch</a>
 </section>
-  
-  <section id="about" style="padding:60px 20px; text-align:center; background:#f5f6fa;">
-    <h2>About Me</h2>
-    <p style="max-width:600px; margin:auto; font-size:1.1rem;">
-      I’m Garet Lekwah, passionate about building digital solutions that are simple, elegant, and powerful.  
-      This website is a space to showcase projects and connect with people.
-    </p>
-  </section>
 
-  <section id="services" style="padding:60px 20px; background:#f4f4f4; text-align:center;">
-  <h2 style="font-size:2rem; margin-bottom:40px; color:#333;">My Services</h2>
-  
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:1000px; margin:0 auto;">
-    
-    <!-- Service Card -->
-    <div style="flex:1; min-width:250px; max-width:300px; background:white; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <h3 style="margin-bottom:10px; color:#ff4757;">Web Development</h3>
+<section id="about" class="about-section">
+  <h2>About Me</h2>
+  <p>I’m Garet Lekwah, passionate about building digital solutions that are simple, elegant, and powerful.  
+     This website is a space to showcase projects and connect with people.</p>
+</section>
+
+<section id="services" class="services-section">
+  <h2>My Services</h2>
+  <div class="service-cards">
+    <div class="card service-card web-dev">
+      <h3>Web Development</h3>
       <p>I build fast, responsive, and modern websites tailored to your needs.</p>
     </div>
-    
-    <!-- Service Card -->
-    <div style="flex:1; min-width:250px; max-width:300px; background:white; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <h3 style="margin-bottom:10px; color:#1e90ff;">Brand Design</h3>
+    <div class="card service-card brand-design">
+      <h3>Brand Design</h3>
       <p>Creating unique brand identities including logos, color schemes, and style guides.</p>
     </div>
-    
-    <!-- Service Card -->
-    <div style="flex:1; min-width:250px; max-width:300px; background:white; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <h3 style="margin-bottom:10px; color:#2ed573;">Consulting</h3>
+    <div class="card service-card consulting">
+      <h3>Consulting</h3>
       <p>Guiding businesses to grow online through strategy and digital transformation.</p>
     </div>
-
   </div>
 </section>
 
-
-
-
-
-  <!-- Projects Section -->
-<section id="projects" style="padding:60px 20px; text-align:center; background:#fff;">
-  <h2 style="font-size:2rem; margin-bottom:40px; color:#333;">My Projects</h2>
-  
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:1000px; margin:0 auto;">
-    
-    <!-- Project Card -->
-    <div style="flex:1; min-width:280px; max-width:320px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s;">
-      <img src="project1.png" alt="Project 1" style="width:100%; border-radius:10px; margin-bottom:15px;">
-      <h3 style="margin-bottom:10px; color:#1e90ff;">E-commerce Website</h3>
-      <p style="color:#555;">A modern online store with shopping cart and payment integration.</p>
+<section id="projects" class="projects-section">
+  <h2>My Projects</h2>
+  <div class="project-cards">
+    <div class="card project-card">
+      <img src="project1.png" alt="Project 1">
+      <h3>E-commerce Website</h3>
+      <p>A modern online store with shopping cart and payment integration.</p>
     </div>
-    
-    <!-- Project Card -->
-    <div style="flex:1; min-width:280px; max-width:320px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s;">
-      <img src="project2.png" alt="Project 2" style="width:100%; border-radius:10px; margin-bottom:15px;">
-      <h3 style="margin-bottom:10px; color:#ff4757;">Portfolio Website</h3>
-      <p style="color:#555;">A personal portfolio to showcase skills, services, and contact details.</p>
+    <div class="card project-card">
+      <img src="project2.png" alt="Project 2">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio to showcase skills, services, and contact details.</p>
     </div>
-    
-    <!-- Project Card -->
-    <div style="flex:1; min-width:280px; max-width:320px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s;">
-      <img src="project3.png" alt="Project 3" style="width:100%; border-radius:10px; margin-bottom:15px;">
-      <h3 style="margin-bottom:10px; color:#2ed573;">Business Landing Page</h3>
-      <p style="color:#555;">A clean, responsive landing page designed for startups.</p>
+    <div class="card project-card">
+      <img src="project3.png" alt="Project 3">
+      <h3>Business Landing Page</h3>
+      <p>A clean, responsive landing page designed for startups.</p>
     </div>
-
   </div>
 </section>
 
+<section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+  <p>Have a question or an idea? Send me a message below:</p>
+  <form id="contact-form" class="contact-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
 
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
 
-  <section id="contact" style="padding:60px 20px; background:#dcdde1; text-align:center;">
-    <h2>Contact Me</h2>
-    <p>Have a question or an idea? Send me a message below:</p>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required rows="4"></textarea>
 
-    <form id="contact-form" style="max-width:500px; margin:auto; text-align:left;">
-      <label for="name">Name</label><br>
-      <input type="text" id="name" name="name" required style="width:100%; padding:8px; margin:5px 0 15px;"><br>
+    <button type="submit" class="btn-submit">Send</button>
+  </form>
+  <p id="form-status"></p>
+</section>
 
-      <label for="email">Email</label><br>
-      <input type="email" id="email" name="email" required style="width:100%; padding:8px; margin:5px 0 15px;"><br>
-
-      <label for="message">Message</label><br>
-      <textarea id="message" name="message" required rows="4" style="width:100%; padding:8px; margin:5px 0 15px;"></textarea><br>
-
-      <button type="submit" style="padding:10px 20px; background:#273c75; color:white; border:none; cursor:pointer;">Send</button>
-    </form>
-
-    <p id="form-status" style="margin-top:15px; font-weight:bold;"></p>
-  </section>
-
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("wUyrTx0kMvfdK-B-h"); // <-- YOUR Public Key
-  })();
-
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.send("service_5wq5uwc", "template_jrovvhw", {
-      from_name: document.getElementById("name").value,
-      from_email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    })
-    .then(function(response) {
-      document.getElementById("form-status").innerText = "✅ Message sent successfully!";
-    }, function(error) {
-      document.getElementById("form-status").innerText = "❌ Failed to send. Please try again.";
-    });
-  });
-</script>
-
-
-
-
-
-<!-- Add this animation script at bottom before </body> -->
-<script>
-  const cards = document.querySelectorAll('#projects div');
-  window.addEventListener('scroll', () => {
-    cards.forEach(card => {
-      const cardPos = card.getBoundingClientRect().top;
-      if(cardPos < window.innerHeight - 100){
-        card.style.transform = "translateY(0)";
-        card.style.opacity = "1";
-      }
-    });
-  });
-</script>
-
-
-  
-
-  <script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target); // animate only once
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-</script>
-
-  <script>
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.getElementById("nav-menu");
-
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  });
-
-  // Close menu on link click
-  document.querySelectorAll(".nav-menu a").forEach(link =>
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    })
-  );
-</script>
-
-
-
-
-  <!-- Blog Section -->
-<section id="blog">
+<section id="blog" class="blog-section">
   <h2>Latest Blog Posts</h2>
   <div class="blog-container">
-    
     <article class="blog-post">
       <img src="https://via.placeholder.com/300x180" alt="Blog Post 1">
       <h3>How I Started My Journey</h3>
       <p>A short story about how I began my path into tech and design...</p>
       <a href="#">Read More</a>
     </article>
-    
     <article class="blog-post">
       <img src="https://via.placeholder.com/300x180" alt="Blog Post 2">
       <h3>Tips for Growing Your Brand</h3>
       <p>Some simple steps you can follow to make your brand stand out online...</p>
       <a href="#">Read More</a>
     </article>
-    
     <article class="blog-post">
       <img src="https://via.placeholder.com/300x180" alt="Blog Post 3">
       <h3>Future Projects & Plans</h3>
       <p>Here’s what I’m planning to build and how I see the future shaping...</p>
       <a href="#">Read More</a>
     </article>
-
   </div>
 </section>
 
-  <footer>
+<footer>
   <p>© 2025 LekwahGreat | Built with ❤️ and code</p>
   <div class="social-icons">
-    <div class="social-icons">
-  <a href="https://twitter.com/LekwahGreat" target="_blank">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2" xmlns="http://www.w3.org/2000/svg">
-      <path d="M22.46 6c-.77.35-1.5.59-2.28.69.82-.49 1.45-1.27 1.75-2.2-.77.46-1.62.8-2.52.98a4.48 4.48 0 0 0-7.64 4.09c-3.73-.18-7.04-1.97-9.26-4.68-.39.67-.61 1.44-.61 2.27 0 1.56.8 2.93 2 3.74-.74-.02-1.44-.23-2.05-.57v.06c0 2.18 1.55 4 3.6 4.42-.38.1-.78.16-1.2.16-.29 0-.57-.03-.85-.08.57 1.77 2.22 3.06 4.17 3.1A9 9 0 0 1 2 19.54a12.68 12.68 0 0 0 6.88 2.01c8.27 0 12.8-6.85 12.8-12.8 0-.2 0-.39-.01-.58A9.22 9.22 0 0 0 24 4.56a9.07 9.07 0 0 1-2.54.7z"/>
-    </svg>
-  </a>
-      
-  <a href="https://linkedin.com/in/YourProfile" target="_blank">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="#0077B5" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.48h4.56V24H.22V8.48zm7.42 0h4.37v2.16h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.48 3.04 5.48 6.99V24h-4.55v-7.62c0-1.82-.03-4.16-2.54-4.16-2.54 0-2.93 1.98-2.93 4.02V24H7.64V8.48z"/>
-    </svg>
-  </a>
-  <a href="https://instagram.com/@garetlekwah" target="_blank"> ... </a>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="#E4405F" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2.16c3.2 0 3.584.012 4.85.07 1.17.054 1.96.24 2.42.4a4.92 4.92 0 0 1 1.78 1.05 4.92 4.92 0 0 1 1.05 1.78c.16.46.346 1.25.4 2.42.058 1.267.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.96-.4 2.42a4.92 4.92 0 0 1-1.05 1.78 4.92 4.92 0 0 1-1.78 1.05c-.46.16-1.25.346-2.42.4-1.267.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.24-2.42-.4a4.92 4.92 0 0 1-1.78-1.05 4.92 4.92 0 0 1-1.05-1.78c-.16-.46-.346-1.25-.4-2.42-.058-1.267-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.24-1.96.4-2.42a4.92 4.92 0 0 1 1.05-1.78A4.92 4.92 0 0 1 4.73 2.63c.46-.16 1.25-.346 2.42-.4C8.416 2.172 8.8 2.16 12 2.16zm0-2.16C8.736 0 8.332.012 7.052.07 5.74.128 4.695.312 3.88.632a7.073 7.073 0 0 0-2.55 1.6A7.073 7.073 0 0 0 .632 4.88C.312 5.695.128 6.74.07 8.052.012 9.332 0 9.736 0 12s.012 2.668.07 3.948c.058 1.312.242 2.357.562 3.172a7.073 7.073 0 0 0 1.6 2.55 7.073 7.073 0 0 0 2.55 1.6c.815.32 1.86.504 3.172.562C9.332 23.988 9.736 24 12 24s2.668-.012 3.948-.07c1.312-.058 2.357-.242 3.172-.562a7.073 7.073 0 0 0 2.55-1.6 7.073 7.073 0 0 0 1.6-2.55c.32-.815.504-1.86.562-3.172C23.988 14.668 24 14.264 24 12s-.012-2.668-.07-3.948c-.058-1.312-.242-2.357-.562-3.172a7.073 7.073 0 0 0-1.6-2.55 7.073 7.073 0 0 0-2.55-1.6c-.815-.32-1.86-.504-3.172-.562C14.668.012 14.264 0 12 0z"/>
-      <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z"/>
-      <circle cx="18.406" cy="5.594" r="1.44"/>
-    </svg>
-  </a>
+    <a href="https://twitter.com/LekwahGreat" target="_blank">Twitter</a>
+    <a href="https://linkedin.com/in/YourProfile" target="_blank">LinkedIn</a>
+    <a href="https://instagram.com/@garetlekwah" target="_blank">Instagram</a>
+  </div>
   <p><a href="#top">Back to top ↑</a></p>
 </footer>
 
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
