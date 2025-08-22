@@ -17,6 +17,15 @@ document.querySelectorAll(".nav-menu a").forEach(link =>
 
 // ===== Scroll Animation =====
 const animateElements = document.querySelectorAll('.project-card, .blog-post');
+window.addEventListener('scroll', () => {
+  projectCards.forEach(card => {
+    const cardPos = card.getBoundingClientRect().top;
+    if(cardPos < window.innerHeight - 100){
+      card.style.transform = "translateY(0)";
+      card.style.opacity = "1";
+    }
+  });
+});
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
