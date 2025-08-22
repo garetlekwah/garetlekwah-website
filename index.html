@@ -197,6 +197,49 @@
   });
 </script>
 
+<!-- Projects Section -->
+<section id="projects" style="padding:60px 20px; text-align:center; background:#fff;">
+  <h2 style="font-size:2rem; margin-bottom:40px; color:#333;">My Projects</h2>
+  
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:1000px; margin:0 auto;">
+    
+    <!-- Project Card -->
+    <div style="flex:1; min-width:280px; max-width:320px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s;">
+      <img src="project1.png" alt="Project 1" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      <h3 style="margin-bottom:10px; color:#1e90ff;">E-commerce Website</h3>
+      <p style="color:#555;">A modern online store with shopping cart and payment integration.</p>
+    </div>
+    
+    <!-- Project Card -->
+    <div style="flex:1; min-width:280px; max-width:320px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s;">
+      <img src="project2.png" alt="Project 2" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      <h3 style="margin-bottom:10px; color:#ff4757;">Portfolio Website</h3>
+      <p style="color:#555;">A personal portfolio to showcase skills, services, and contact details.</p>
+    </div>
+    
+    <!-- Project Card -->
+    <div style="flex:1; min-width:280px; max-width:320px; background:#f9f9f9; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s;">
+      <img src="project3.png" alt="Project 3" style="width:100%; border-radius:10px; margin-bottom:15px;">
+      <h3 style="margin-bottom:10px; color:#2ed573;">Business Landing Page</h3>
+      <p style="color:#555;">A clean, responsive landing page designed for startups.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Add this animation script at bottom before </body> -->
+<script>
+  const cards = document.querySelectorAll('#projects div');
+  window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+      const cardPos = card.getBoundingClientRect().top;
+      if(cardPos < window.innerHeight - 100){
+        card.style.transform = "translateY(0)";
+        card.style.opacity = "1";
+      }
+    });
+  });
+</script>
 
 
 
@@ -207,6 +250,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
