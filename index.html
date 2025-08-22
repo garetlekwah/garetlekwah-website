@@ -355,42 +355,117 @@ html { scroll-behavior: smooth; }
 ### Next Step (after you push these):
 
 **Step 2 — Hero/Heading Polish** (spacing, a short intro line, and cleaner call‑to‑action). Let me know once Step 1 is live and I’ll drop the exact markup/ CSS for the hero.
-/* ===== Navigation Bar ===== */
 
-    .navbar {
+/* ===== Navbar Base ===== */
+.navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 13, 18, 0.9); /* semi-transparent */
-  backdrop-filter: blur(8px);
+  background: rgba(17, 24, 39, 0.85); /* glassy dark */
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 64px;
+}
+
 .logo {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--fg);
 }
-.logo span { color: var(--accent); }
-
-.menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.menu li { margin: 0; }
-.menu a {
-  display: block;
-  padding: 16px 12px;
-  font-weight: 600;
-  color: var(--muted);
-  transition: color 0.2s ease;
-}
-.menu a:hover,
-.menu a:focus,
-.menu a.active {
+.logo span {
   color: var(--accent);
 }
+
+/* ===== Menu Links ===== */
+.nav-menu {
+  display: flex;
+  gap: 24px;
+}
+.nav-menu a {
+  font-weight: 600;
+  color: var(--fg);
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-menu a:hover {
+  color: var(--accent);
+}
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* ===== Hamburger Button ===== */
+.hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--fg);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 64px;
+    right: -100%; /* hidden off-screen */
+    width: 220px;
+    height: 100vh;
+    background: var(--card);
+    border-left: 1px solid var(--border);
+    padding: 40px 20px;
+    flex-direction: column;
+    gap: 20px;
+    transition: right 0.3s ease;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+
 
 
 </script>
@@ -401,17 +476,30 @@ html { scroll-behavior: smooth; }
   
 <!-- ===== Navigation Bar ===== -->
 
-  <header>
-    <h1>LekwahGaret</h1>
-    <nav>
+
+  <header class="navbar">
+  <div class="nav-container">
+    <h1 class="logo">Lekwah<span>Garet</span></h1>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <nav class="nav-menu" id="nav-menu">
       <a href="index.html">Home</a>
       <a href="dashboard.html">Dashboard</a>
       <a href="#about">About</a>
-       <a href="#projects">Projects</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
       <a href="blog-post1.html">Read More</a>
     </nav>
-  </header>
+  </div>
+</header>
+
   
 
 
@@ -571,6 +659,24 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 </script>
 
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Close menu on link click
+  document.querySelectorAll(".nav-menu a").forEach(link =>
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    })
+  );
+</script>
+
 
 
 
@@ -630,6 +736,7 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(e
 
 </body>
 </html>
+
 
 
 
