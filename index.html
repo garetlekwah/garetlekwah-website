@@ -200,6 +200,162 @@ footer .social-icons a {
   opacity: 1;
   transform: translateY(0);
 }
+    # Step 1: Head, Fonts, and Base Styles
+
+This first step makes your site look immediately more professional by polishing the **`<head>` (SEO + social)** and **typography + spacing**. Copy–paste the snippets below into your existing files.
+
+---
+
+## 1) Replace your `<head>` with this
+
+> Put this inside your HTML file, replacing everything between `<head>...</head>`.
+
+```html
+<head>
+  <!-- Required basics -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lekwah Great — Portfolio</title>
+  <meta name="description" content="Portfolio of Lekwah Great (Frontend developer). Projects, skills, and contact information." />
+
+  <!-- Favicon (place favicon.png at your site root) -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- Web fonts: Inter for clean, modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph / Social share -->
+  <meta property="og:title" content="Lekwah Great — Portfolio" />
+  <meta property="og:description" content="Frontend developer showcasing projects and contact info." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://garetlekwah.github.io/garetlekwah-website/" />
+  <!-- Replace with a real image hosted in your repo, e.g. /assets/og-image.jpg -->
+  <meta property="og:image" content="https://garetlekwah.github.io/garetlekwah-website/assets/og-image.jpg" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lekwah Great — Portfolio" />
+  <meta name="twitter:description" content="Frontend developer showcasing projects and contact info." />
+  <meta name="twitter:image" content="https://garetlekwah.github.io/garetlekwah-website/assets/og-image.jpg" />
+
+  <!-- Base styles (optional if you already have a CSS file; see Section 2) -->
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+```
+
+**Notes:**
+
+* Add a `favicon.png` at the root of your repo (or update the path).
+* Add an image file at `assets/og-image.jpg` to control how your link looks when shared.
+* Update the description later if you want to highlight specific skills.
+
+---
+
+## 2) Add/Update your base CSS
+
+> Create a `styles.css` file at the site root (or merge these into your current CSS). These rules tighten typography, spacing, and color.
+
+```css
+/* ===== Base Theme ===== */
+:root {
+  --bg: #0b0d12;        /* deep slate background */
+  --card: #111827;      /* card/section background */
+  --fg: #e5e7eb;        /* main text */
+  --muted: #9ca3af;     /* secondary text */
+  --accent: #4f46e5;    /* indigo accent */
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.65;
+  letter-spacing: 0.2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings with tighter rhythm */
+h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5rem; }
+h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; }
+h2 { font-size: clamp(1.4rem, 2.4vw, 2rem); font-weight: 700; }
+h3 { font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 600; }
+
+p { margin: 0.75rem 0; color: var(--fg); }
+.small { color: var(--muted); font-size: 0.95rem; }
+
+/* Sections aligned and centered for readability */
+section { max-width: 1000px; margin: 0 auto; padding: 72px 20px; }
+.hero { padding-top: 96px; padding-bottom: 48px; }
+
+/* Links and buttons */
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 10px 20px rgba(0,0,0,.25);
+  text-decoration: none;
+}
+.btn:hover { transform: translateY(-1px); }
+
+/* Utility components */
+.pill {
+  display: inline-block; padding: 6px 12px; border-radius: 9999px;
+  background: rgba(79, 70, 229, 0.12); color: var(--accent); font-weight: 600; font-size: 0.9rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* Layout helpers */
+.container { max-width: 1000px; padding: 0 20px; margin: 0 auto; }
+.stack > * + * { margin-top: 16px; }            /* vertical spacing */
+.cluster { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.grid { display: grid; gap: 16px; }
+
+/* Make anchor jumps feel smooth (for later steps) */
+html { scroll-behavior: smooth; }
+```
+
+---
+
+## 3) Where these changes help
+
+* **Immediate visual lift** from the Inter font and consistent spacing.
+* **Professional link previews** (Open Graph/Twitter) when you share your site.
+* **Brand presence** from the favicon in the browser tab.
+
+---
+
+## 4) Quick checklist
+
+* [ ] Commit `favicon.png` at the project root.
+* [ ] Commit `assets/og-image.jpg` (1200×630 recommended).
+* [ ] Replace `<head>` with the snippet above.
+* [ ] Add `styles.css` (or merge the CSS into your existing stylesheet).
+* [ ] Push to GitHub Pages and refresh.
+
+---
+
+### Next Step (after you push these):
+
+**Step 2 — Hero/Heading Polish** (spacing, a short intro line, and cleaner call‑to‑action). Let me know once Step 1 is live and I’ll drop the exact markup/ CSS for the hero.
+
 
 </script>
   </style>
@@ -434,6 +590,7 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(e
 
 </body>
 </html>
+
 
 
 
