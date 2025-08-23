@@ -89,6 +89,10 @@ header .logo {
   border: none;
   cursor: pointer;
 }
+.nav {
+  display: flex;
+  gap: 20px;
+}
 
 /* Responsive styles */
 @media (max-width: 768px) {
