@@ -241,3 +241,18 @@ footer .social-icons a img:hover {
   background-color: #1e60a6;
   transform: scale(1.1);
 }
+
+/* General Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial,sans-serif; background: url('images/tech-background.png') no-repeat center center fixed; background-size: cover; color:#fff; }
+
+/* Login page */
+.login-container { display:flex; justify-content:center; align-items:center; height:100vh; }
+.login-card { background: rgba(0,0,0,0.6); padding:40px; border-radius:12px; width:320px; text-align:center; }
+.login-card input { width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none; }
+.login-card button { width:100%; padding:12px; margin-top:10px; background:#004aad; color:white; border:none; border-radius:8px; cursor:pointer; }
+.login-card button:hover { background:#00337a; }
+
+/* Messages panel */
+.messages-panel { background: rgba(0,0,0,0.5); padding: 20px; border-radius: 12px; max-height: 300px; overflow-y: auto; }
+.message { padding: 10px; margin-bottom: 10px; background: rgba(255,255,255,0.1); border-radius: 8px; }
