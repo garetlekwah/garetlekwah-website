@@ -5,7 +5,14 @@ function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("show");
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
 
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+  
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
@@ -38,7 +45,6 @@ window.addEventListener('scroll', () => {
       card.style.opacity = "1";
     }
   });
-});
 // Initialize EmailJS
 (function(){
   emailjs.init("wUyrTx0kMvfdK-B-h"); // <-- your public key
@@ -64,7 +70,6 @@ contactForm.addEventListener("submit", function(e) {
     formStatus.textContent = "❌ Failed to send. Please try again.";
     formStatus.style.color = "red";
   });
-});
 // Back to Top Button
 const backToTopButton = document.getElementById("backToTop");
 
@@ -74,19 +79,10 @@ window.addEventListener("scroll", () => {
   } else {
     backToTopButton.style.display = "none";
   }
-});
 
 backToTopButton.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu");
-
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
   });
 });
