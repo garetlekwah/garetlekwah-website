@@ -58,4 +58,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Firebase config
+const firebaseConfig = { apiKey:"YOUR_API_KEY", authDomain:"YOUR_AUTH_DOMAIN", projectId:"YOUR_PROJECT_ID" };
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+// Login
+const loginForm = document.getElementById('login-form');
+const loginStatus = document.getElementById('login-status');
+
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then(userCredential => { window.location.href = 'dashboard.html'; })
+    .catch(error => { loginStatus.textContent = "❌ "+error.message; });
+});
+
+
 });
