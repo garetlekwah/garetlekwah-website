@@ -6,30 +6,26 @@
   <title>LekwahGaret</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
+
   <!-- Header -->
-  
   <header>
-  <div class="logo">Lekwahgaret</div>
+    <div class="logo">LekwahGaret</div>
 
-  <!-- Hamburger button -->
-  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-    ☰
-  </button>
+    <!-- Hamburger button -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
 
-  <!-- Navigation menu -->
-  <nav class="nav" id="menu">
-    <a href="index.html">Home</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <a href="blog-post1.html">Read More</a>
-  </nav>
-</header>
-
+    <!-- Navigation menu -->
+    <nav class="nav" id="menu">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="blog-post1.html">Read More</a>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -94,35 +90,32 @@
     </div>
   </section>
 
- <!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <h2>Contact Me</h2>
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message" rows="6" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-  <script src="script.js"></script>
- 
-<footer>
-  <p>© 2025 LekwahGaret. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
-  </div>
-</footer>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <form id="contact-form" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit">Send Message</button>
+      <div id="form-status"></div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 LekwahGaret. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </footer>
+
   <!-- Back to Top -->
-<button id="backToTop" title="Go to top">&#8679;</button>
+  <button id="backToTop" title="Go to top">&#8679;</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
