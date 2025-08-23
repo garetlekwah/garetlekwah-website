@@ -59,3 +59,12 @@ const projectsChart = new Chart(projectsCtx, {
         }
     }
 });
+
+// Tools interaction
+const tools = document.querySelectorAll('.tool-card');
+
+tools.forEach(tool => {
+  tool.addEventListener('click', () => {
+    alert(`You clicked: ${tool.querySelector('p').textContent}`);
+  });
+});
