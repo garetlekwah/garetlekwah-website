@@ -22,3 +22,30 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+// Initialize EmailJS
+(function(){
+  emailjs.init("wUyrTx0kMvfdK-B-h"); // <-- your public key
+})();
+
+// Contact form submission
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+
+contactForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.send("service_5wq5uwc", "template_jrovvhw", {
+    from_name: contactForm.name.value,
+    from_email: contactForm.email.value,
+    message: contactForm.message.value
+  })
+  .then(function(response) {
+    formStatus.textContent = "✅ Message sent successfully!";
+    formStatus.style.color = "green";
+    contactForm.reset();
+  }, function(error) {
+    formStatus.textContent = "❌ Failed to send. Please try again.";
+    formStatus.style.color = "red";
+  });
+});
+
