@@ -140,4 +140,78 @@ footer {
   .hamburger {
     display: block;
   }
+  /* Contact Section */
+.contact-section {
+  background: rgba(255, 255, 255, 0.05); /* slightly transparent */
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--fg);
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  margin-bottom: 40px;
+  color: var(--muted);
+}
+
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--fg);
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+#contact-form .btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#contact-form .btn:hover {
+  transform: translateY(-2px);
+}
+
+#form-status {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+}
 }
