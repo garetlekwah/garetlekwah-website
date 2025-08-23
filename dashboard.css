@@ -144,4 +144,45 @@ footer {
   .charts {
     grid-template-columns: 1fr;
   }
+  /* Tools Section */
+.tools {
+  margin-bottom: 40px;
+}
+
+.tools h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.tool-card {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+.tool-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.2);
+}
+
 }
