@@ -1,90 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard | Garet Lekwah</title>
-<link rel="stylesheet" href="dashboard.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script defer src="dashboard.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | LekwahGaret</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>LekwahGaret</h2>
+      <button id="closeSidebar" class="close-btn">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="#"><i class="fas fa-users"></i> Users</a>
+      <a href="#"><i class="fas fa-box"></i> Projects</a>
+      <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+      <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    </nav>
+  </aside>
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="logo">LekwahGaret</div>
-  <button class="hamburger" id="hamburger">&#9776;</button>
-  <nav class="nav-links" id="navLinks">
-    <a href="#">Dashboard</a>
-    <a href="#">Users</a>
-    <a href="#">Projects</a>
-    <a href="#">Messages</a>
-    <a href="#">Settings</a>
-  </nav>
-</div>
-
-<!-- Main Content -->
-<div class="main">
+  <!-- Header -->
   <header>
-    <h1>Dashboard Overview</h1>
+    <button id="menuToggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <h1>Dashboard</h1>
   </header>
 
-  <section class="cards">
-    <div class="card">
-      <h2>👥 Users</h2>
-      <p>120 Active</p>
-    </div>
-    <div class="card">
-      <h2>📁 Projects</h2>
-      <p>15 Ongoing</p>
-    </div>
-    <div class="card">
-      <h2>💬 Messages</h2>
-      <p>8 New</p>
-    </div>
-    <div class="card">
-      <h2>⚙️ Settings</h2>
-      <p>Customize your profile</p>
-    </div>
-  </section>
+  <!-- Main Content -->
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h3>Users</h3>
+        <p>120 Active</p>
+      </div>
+      <div class="card">
+        <h3>Projects</h3>
+        <p>15 Ongoing</p>
+      </div>
+      <div class="card">
+        <h3>Messages</h3>
+        <p>8 New</p>
+      </div>
+      <div class="card">
+        <h3>Settings</h3>
+        <p>Customize</p>
+      </div>
+    </section>
 
-  <!-- Tools / Quick Actions -->
-<section class="tools">
-  <h2>Quick Actions</h2>
-  <div class="tools-grid">
-    <div class="tool-card">
-      <i class="fas fa-user-plus"></i>
-      <p>Add New User</p>
-    </div>
-    <div class="tool-card">
-      <i class="fas fa-folder-plus"></i>
-      <p>Create Project</p>
-    </div>
-    <div class="tool-card">
-      <i class="fas fa-envelope"></i>
-      <p>Send Message</p>
-    </div>
-    <div class="tool-card">
-      <i class="fas fa-cogs"></i>
-      <p>Settings</p>
-    </div>
-  </div>
-</section>
+    <section class="charts">
+      <div class="chart-card">
+        <h3>Project Status</h3>
+        <canvas id="projectsChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Messages Activity</h3>
+        <canvas id="messagesChart"></canvas>
+      </div>
+    </section>
+  </main>
 
-
-  <section class="charts">
-    <div class="chart-container">
-      <canvas id="usersChart"></canvas>
-    </div>
-    <div class="chart-container">
-      <canvas id="projectsChart"></canvas>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    <p>© 2025 LekwahGaret | Dashboard</p>
+    <p>© 2025 LekwahGaret. All rights reserved.</p>
   </footer>
-</div>
 
+  <script src="dashboard.js"></script>
 </body>
 </html>
