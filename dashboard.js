@@ -1,70 +1,58 @@
-// Hamburger Menu Toggle
+// Hamburger Menu
+const menuToggle = document.getElementById('menuToggle');
 const sidebar = document.getElementById('sidebar');
-const hamburger = document.getElementById('hamburger');
+const closeSidebar = document.getElementById('closeSidebar');
 
-hamburger.addEventListener('click', () => {
+menuToggle.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
 
+closeSidebar.addEventListener('click', () => {
+  sidebar.classList.remove('active');
+});
+
 // Charts
-const usersCtx = document.getElementById('usersChart').getContext('2d');
 const projectsCtx = document.getElementById('projectsChart').getContext('2d');
-
-const usersChart = new Chart(usersCtx, {
-    type: 'line',
-    data: {
-        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul'],
-        datasets: [{
-            label: 'Active Users',
-            data: [50, 70, 100, 120, 130, 110, 120],
-            backgroundColor: 'rgba(255,255,255,0.2)',
-            borderColor: 'rgba(255,255,255,1)',
-            borderWidth: 2,
-            fill: true,
-            tension: 0.3
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-          legend: { labels: { color: '#fff' } }
-        },
-        scales: {
-            x: { ticks: { color: '#fff' } },
-            y: { ticks: { color: '#fff' } }
-        }
-    }
-});
-
 const projectsChart = new Chart(projectsCtx, {
-    type: 'bar',
-    data: {
-        labels: ['Website','Portfolio','E-Commerce','Dashboard','App'],
-        datasets: [{
-            label: 'Projects Completed',
-            data: [5,3,4,2,1],
-            backgroundColor: 'rgba(255,255,255,0.6)',
-            borderColor: 'rgba(255,255,255,1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-          legend: { labels: { color: '#fff' } }
-        },
-        scales: {
-            x: { ticks: { color: '#fff' } },
-            y: { ticks: { color: '#fff' } }
-        }
+  type: 'doughnut',
+  data: {
+    labels: ['Completed', 'In Progress', 'Pending'],
+    datasets: [{
+      label: 'Projects',
+      data: [7, 5, 3],
+      backgroundColor: ['#00d1b2','#ffdd57','#ff3860'],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { color: '#fff' } }
     }
+  }
 });
 
-// Tools interaction
-const tools = document.querySelectorAll('.tool-card');
-
-tools.forEach(tool => {
-  tool.addEventListener('click', () => {
-    alert(`You clicked: ${tool.querySelector('p').textContent}`);
-  });
+const messagesCtx = document.getElementById('messagesChart').getContext('2d');
+const messagesChart = new Chart(messagesCtx, {
+  type: 'line',
+  data: {
+    labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+    datasets: [{
+      label: 'Messages',
+      data: [2,5,3,6,4,7,5],
+      fill: false,
+      borderColor: '#00d1b2',
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { labels: { color: '#fff' } }
+    },
+    scales: {
+      x: { ticks: { color: '#fff' } },
+      y: { ticks: { color: '#fff' } }
+    }
+  }
 });
