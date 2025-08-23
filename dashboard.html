@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard | Garet Lekwah</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f9; color: #333; }
-    header { background: #222; color: #fff; padding: 1rem; text-align: center; }
-    .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 30px; max-width: 1200px; margin: auto; }
-    .card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.2s; }
-    .card:hover { transform: translateY(-5px); }
-    footer { background: #222; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | Garet Lekwah</title>
+<link rel="stylesheet" href="dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="dashboard.js"></script>
 </head>
 <body>
 
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="logo">LekwahGaret</div>
+  <button class="hamburger" id="hamburger">&#9776;</button>
+  <nav class="nav-links" id="navLinks">
+    <a href="#">Dashboard</a>
+    <a href="#">Users</a>
+    <a href="#">Projects</a>
+    <a href="#">Messages</a>
+    <a href="#">Settings</a>
+  </nav>
+</div>
+
+<!-- Main Content -->
+<div class="main">
   <header>
-    <h1>Dashboard</h1>
+    <h1>Dashboard Overview</h1>
   </header>
 
-  <section class="dashboard">
+  <section class="cards">
     <div class="card">
-      <h2>Users</h2>
-      <p>120 active</p>
+      <h2>👥 Users</h2>
+      <p>120 Active</p>
     </div>
     <div class="card">
-      <h2>Projects</h2>
-      <p>15 ongoing</p>
+      <h2>📁 Projects</h2>
+      <p>15 Ongoing</p>
     </div>
     <div class="card">
-      <h2>Messages</h2>
-      <p>8 new</p>
+      <h2>💬 Messages</h2>
+      <p>8 New</p>
     </div>
     <div class="card">
-      <h2>Settings</h2>
+      <h2>⚙️ Settings</h2>
       <p>Customize your profile</p>
+    </div>
+  </section>
+
+  <section class="charts">
+    <div class="chart-container">
+      <canvas id="usersChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="projectsChart"></canvas>
     </div>
   </section>
 
   <footer>
     <p>© 2025 LekwahGaret | Dashboard</p>
   </footer>
-
-  <!-- Optional JS -->
-  <script>
-    // Example: highlight a card when clicked
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        card.style.backgroundColor = '#e0f7fa';
-        setTimeout(() => { card.style.backgroundColor = '#fff'; }, 500);
-      });
-    });
-  </script>
+</div>
 
 </body>
 </html>
