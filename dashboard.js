@@ -56,3 +56,24 @@ const messagesChart = new Chart(messagesCtx, {
     }
   }
 });
+
+// Sidebar toggle
+const sidebar = document.getElementById('sidebar');
+const hamburger = document.getElementById('hamburger');
+hamburger.addEventListener('click',()=>{sidebar.classList.toggle('active');});
+
+// Chart.js
+const ctx = document.getElementById('chart').getContext('2d');
+const chart = new Chart(ctx,{type:'bar',data:{labels:['P1','P2','P3','P4'],datasets:[{label:'Progress %',data:[75,50,90,60],backgroundColor:'rgba(0,74,173,0.7)',borderColor:'rgba(0,74,173,1)',borderWidth:1}]},options:{responsive:true,scales:{y:{beginAtZero:true,max:100}}}});
+
+// Firebase auth check
+firebase.auth().onAuthStateChanged(user=>{
+  if(!user){window.location.href='login.html';} 
+  else{document.getElementById('user-name').textContent = user.email;}
+});
+
+// Logout
+document.getElementById('logout-btn').addEventListener('click',()=>{
+  firebase.auth().signOut().then(()=>{window.location.href='login.html';});
+});
+
