@@ -1,89 +1,61 @@
-// Hamburger Menu Toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("show");
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu");
 
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
+  // Hamburger Menu Toggle
+  const hamburger = document.querySelector('.menu-toggle'); // make sure matches your button
+  const nav = document.querySelector('.nav'); // make sure matches your nav ul
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
   });
-  });
-  
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
-// Back to Top
-let backToTopButton = document.getElementById("backToTop");
 
-window.onscroll = function() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    backToTopButton.style.display = "block";
-  } else {
-    backToTopButton.style.display = "none";
-  }
-};
-
-backToTopButton.addEventListener("click", function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-
-
-
-// Project Cards Animation
-const projectCards = document.querySelectorAll('.project-card');
-
-window.addEventListener('scroll', () => {
-  projectCards.forEach(card => {
-    const cardPos = card.getBoundingClientRect().top;
-    if(cardPos < window.innerHeight - 100){
-      card.style.transform = "translateY(0)";
-      card.style.opacity = "1";
+  // Back to Top Button
+  const backToTopButton = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
     }
   });
-// Initialize EmailJS
-(function(){
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Project Cards Animation
+  const projectCards = document.querySelectorAll('.project-card');
+  window.addEventListener('scroll', () => {
+    projectCards.forEach(card => {
+      const cardPos = card.getBoundingClientRect().top;
+      if(cardPos < window.innerHeight - 100){
+        card.style.transform = "translateY(0)";
+        card.style.opacity = "1";
+      }
+    });
+  });
+
+  // Initialize EmailJS
   emailjs.init("wUyrTx0kMvfdK-B-h"); // <-- your public key
-})();
 
-// Contact form submission
-const contactForm = document.getElementById("contact-form");
-const formStatus = document.getElementById("form-status");
+  // Contact form submission
+  const contactForm = document.getElementById("contact-form");
+  const formStatus = document.getElementById("form-status");
 
-contactForm.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  emailjs.send("service_5wq5uwc", "template_jrovvhw", {
-    from_name: contactForm.name.value,
-    from_email: contactForm.email.value,
-    message: contactForm.message.value
-  })
-  .then(function(response) {
-    formStatus.textContent = "✅ Message sent successfully!";
-    formStatus.style.color = "green";
-    contactForm.reset();
-  }, function(error) {
-    formStatus.textContent = "❌ Failed to send. Please try again.";
-    formStatus.style.color = "red";
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    emailjs.send("service_5wq5uwc", "template_jrovvhw", {
+      from_name: contactForm.name.value,
+      from_email: contactForm.email.value,
+      message: contactForm.message.value
+    })
+    .then(function(response) {
+      formStatus.textContent = "✅ Message sent successfully!";
+      formStatus.style.color = "green";
+      contactForm.reset();
+    }, function(error) {
+      formStatus.textContent = "❌ Failed to send. Please try again.";
+      formStatus.style.color = "red";
+    });
   });
-// Back to Top Button
-const backToTopButton = document.getElementById("backToTop");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    backToTopButton.style.display = "block";
-  } else {
-    backToTopButton.style.display = "none";
-  }
-
-backToTopButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
 });
